@@ -1,7 +1,7 @@
 # fake-s3
 
 Dockerfile for
-[mrister/fake-s3](https://registry.hub.docker.com/u/mrister/fake-s3/)
+[mrister/fake-s3](https://registry.hub.docker.com/u/hnrqer/fake-s3/)
 on [Docker Hub](https://registry.hub.docker.com).
 
 Deploys [fake-s3](https://github.com/jubos/fake-s3) in a Docker container from master branch with option to allow CORS headers control
