@@ -1,16 +1,15 @@
 FROM debian:jessie
-MAINTAINER Mihovil Rister <mihovil.rister@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-LABEL "Description"="This is a port of the fake-s3 image that geets the latest changes from https://github.com/jubos/fake-s3.git and supports setting env vars for CORS"
-LABEL "fake-s3-repo"="https://github.com/jubos/fake-s3.git"
-LABEL "repository"="https://github.com/mrister/fake-s3.git"
+LABEL "Description"="This is a port of the fake-s3 image that geets the latest changes from https://github.com/clickfunnels2/fake-s3.git and supports setting env vars for CORS"
+LABEL "fake-s3-repo"="https://github.com/clickfunnels/fake-s3.git"
+LABEL "repository"="https://github.com/clickfunnels2/fake-s3-docker.git"
 
 # install Ruby
 RUN apt-get update && apt-get install -yqq ruby rubygems-integration git
 
 # install fake-s3 from master that has cors support (at the moment unreleased)
-RUN gem install specific_install && gem specific_install -l https://github.com/jubos/fake-s3.git
+RUN gem install specific_install && gem specific_install -l https://github.com/clickfunnels2/fake-s3.git
 
 ENV CORS_PREFLIGHT_ALLOW_HEADERS=${CORS_PREFLIGHT_ALLOW_HEADERS:-*}
 ENV CORS_ORIGIN=${CORS_ORIGIN:-*}
